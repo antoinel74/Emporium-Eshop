@@ -9,6 +9,7 @@ export default function ProductCard(props?: any) {
   const { id: price_id, unit_amount: cost, product: productInfo } = product;
   const { name, description } = productInfo;
   const brand = name.split(" ")[0];
+  const nameWithoutBrand = name.split(" ").slice(1).join(" ");
   const setProduct = useCart((state?: any) => state.setProduct);
 
   function onClick() {
@@ -35,7 +36,7 @@ export default function ProductCard(props?: any) {
       <Link href={`/product/?price_id=${price_id}`}>
         <div className="mt-2 w-full">
           <span className="block text-sm opacity-75">{brand}</span>
-          <h2 className="overflow-x-hidden uppercase opacity-75">{name}</h2>
+          <h2 className="overflow-x-hidden uppercase opacity-75">{nameWithoutBrand}</h2>
           <span className="mt-2 block font-semibold">{cost / 100}€</span>
         </div>
       </Link>
