@@ -70,7 +70,7 @@ export const Navbar = () => {
           <ul className="navTheme-ul flex gap-4">
             {[
               ["Home", "/"],
-              ["Products", "/products"],
+              ["Products", "/#products"],
               ["Contact", "/#contact"],
             ].map(([title, url]) => (
               <Link key={title} href={url} className="px-2 opacity-70 hover:opacity-100">

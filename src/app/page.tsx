@@ -4,7 +4,7 @@ import { createClient } from "@/prismicio";
 import { Slider } from "@/components/Slider";
 import { Header } from "@/components/Header";
 
-async function getStripeProducts() {
+export async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {});
   const res = await stripe.prices.list({
     expand: ["data.product"],
@@ -22,7 +22,7 @@ export default async function Home() {
     <main className="">
       <Slider img={page.data.slidertest} />
       <Header />
-      <section className="md:px-4">
+      <section className="md:px-4" id="products">
         <h2 className="font-semibold text-3xl">Latest products</h2>
         <div className="flex w-full flex-wrap justify-center gap-2 md:justify-start md:gap-4">
           {products.map((product, index) => (
