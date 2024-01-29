@@ -36,7 +36,7 @@ export default function ProductCard(props?: any) {
         <div className="mt-2 w-full">
           <span className="block text-sm opacity-75">{brand}</span>
           <h2 className="overflow-x-hidden uppercase opacity-75">{name}</h2>
-          <span className="mt-2 block font-semibold">{cost}€</span>
+          <span className="mt-2 block font-semibold">{cost / 100}€</span>
         </div>
       </Link>
     </div>

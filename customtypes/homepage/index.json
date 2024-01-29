@@ -1,0 +1,138 @@
+{
+  "id": "homepage",
+  "label": "homepage",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "companyname": {
+        "type": "Text",
+        "config": {
+          "label": "companyName",
+          "placeholder": ""
+        }
+      },
+      "companybaseline": {
+        "type": "Text",
+        "config": {
+          "label": "companyBaseline",
+          "placeholder": ""
+        }
+      },
+      "slidertest": {
+        "type": "Group",
+        "config": {
+          "label": "slidertest",
+          "repeat": true,
+          "fields": {
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "banner": {
+        "type": "Group",
+        "config": {
+          "label": "banner",
+          "repeat": true,
+          "fields": {
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "title",
+                "placeholder": ""
+              }
+            },
+            "subtitle": {
+              "type": "Text",
+              "config": {
+                "label": "subtitle",
+                "placeholder": ""
+              }
+            },
+            "content": {
+              "type": "Text",
+              "config": {
+                "label": "content",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "facebook": {
+        "type": "Link",
+        "config": {
+          "label": "facebook",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "instagram": {
+        "type": "Link",
+        "config": {
+          "label": "instagram",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "youtube": {
+        "type": "Link",
+        "config": {
+          "label": "youtube",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}
