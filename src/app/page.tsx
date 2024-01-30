@@ -19,7 +19,7 @@ export default async function Home() {
   const page = await client.getSingle("homepage");
 
   return (
-    <main className="">
+    <main>
       <Slider img={page.data.slidertest} />
       <Header />
       <section className="md:px-4" id="products">

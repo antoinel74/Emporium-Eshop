@@ -8,27 +8,30 @@ export default function Product(props?: any) {
   const { price_id } = props;
   const product = useCart((state?: any) => state.product);
   const { cost, productInfo, name, description, type } = product;
+
   const brand = name.split(" ")[0];
   const nameWithoutBrand = name.split(" ").slice(1).join(" ");
+
   console.log(product);
   console.log(searchParams);
 
   if (!product?.name) {
     window.location.href = "/";
   }
+
   return (
     <div>
       {name && (
-        <div className="flex flex-col md:flex-row min-h-screen w-full mt-16 md:px-16">
-          <figure className="relative w-full md:w-1/2 min-h-[500px] md:min-h-full mx-auto">
+        <div className="flex flex-col lg:flex-row min-h-screen w-full mt-16 lg:mt-24 lg:px-16">
+          <figure className="relative w-full lg:w-1/2 min-h-[500px] mx-auto">
             <Image src={productInfo.images[0]} fill alt={name} className="object-cover" />
           </figure>
-          <div className="w-full md:w-1/2 px-6">
+          <div className="w-full lg:w-1/2 lg:px-16 px-4 py-4 lg:py-0">
             <span className="mb-2 block text-sm font-semibold uppercase opacity-50">{brand}</span>
             <h3 className="text-3xl font-semibold uppercase">{nameWithoutBrand}</h3>
-            <p className="my-4 opacity-50 md:text-xl">{productInfo.description}</p>
+            <p className="my-4 opacity-50 lg:text-xl">{productInfo.description}</p>
             <span className="block text-2xl font-semibold">€{cost / 100}</span>
-            <div className="my-6">
+            <div className="my-8 lg:my-12">
               <button className="flex w-full items-center justify-center gap-2 rounded border-2 border-black py-2">
                 <img src="/heart.svg" className="h-5 w-5" />
                 Add to Wishlist
