@@ -105,6 +105,35 @@
         "config": {
           "choices": {}
         }
+      },
+      "bannerimg": {
+        "type": "Image",
+        "config": {
+          "label": "bannerimg",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "bannertitle": {
+        "type": "Text",
+        "config": {
+          "label": "bannertitle",
+          "placeholder": ""
+        }
+      },
+      "bannersubtitle": {
+        "type": "Text",
+        "config": {
+          "label": "bannersubtitle",
+          "placeholder": ""
+        }
+      },
+      "bannercontent": {
+        "type": "Text",
+        "config": {
+          "label": "bannercontent",
+          "placeholder": ""
+        }
       }
     },
     "SEO & Metadata": {

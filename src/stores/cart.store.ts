@@ -14,7 +14,7 @@ interface CartState {
 const useCart = create<CartState>((set, get) => {
   // Check if there are smthg in storage
   const storedState = localStorage.getItem("cartState");
-  const initialState: CartState = storedState ? JSON.parse(storedState) : { cart: [], product: {}, openModal: false };
+  const initialState: CartState = storedState ? JSON.parse(storedState) : { cart: [], product: {}, openModal: true };
 
   return {
     ...initialState,

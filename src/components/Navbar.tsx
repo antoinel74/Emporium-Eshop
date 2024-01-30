@@ -3,17 +3,15 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useCart from "@/stores/cart.store";
+import CartModal from "./CartModal";
 
 export const Navbar = () => {
   const pathname = usePathname();
   const cartItems = useCart((state?: any) => state.cart);
+  const openModal = useCart((state?: any) => state.openModal);
+  const handleOpenModal = useCart((state?: any) => state.setOpenModal);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [cartOpen, setCartOpen] = useState<boolean>(false);
-
-  const handleCartToggle = () => {
-    setCartOpen(!cartOpen);
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,16 +38,7 @@ export const Navbar = () => {
 
   return (
     <>
-      {/*       {cartOpen && <Cart />} */}
-      {cartOpen && (
-        <button
-          onClick={handleCartToggle}
-          className="z-400 pl-auto fixed right-4 top-4 font-semibold"
-          style={{ zIndex: 400 }}
-        >
-          <img src="/xmark.svg" className="scale-105" />
-        </button>
-      )}
+      {openModal && <CartModal />}
 
       <nav
         className={`fixed top-0 z-30 flex w-full items-center justify-between p-4 transition-all duration-200 ease-in-out md:px-16 ${
@@ -81,7 +70,7 @@ export const Navbar = () => {
         )}
 
         {isMobile ? (
-          <button onClick={handleCartToggle} className="flex">
+          <button className="flex" onClick={handleOpenModal}>
             <img src="/cart.svg" />
             {cartItems.length > 0 && (
               <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>
@@ -93,7 +82,7 @@ export const Navbar = () => {
             <Link href="/account">
               <img src="/user.svg" />
             </Link>
-            <button onClick={handleCartToggle} className="flex items-center gap-1">
+            <button onClick={handleOpenModal} className="flex items-center gap-1">
               <img src="/cart.svg" />
               {cartItems.length > 0 && (
                 <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>

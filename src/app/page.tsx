@@ -3,6 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import { createClient } from "@/prismicio";
 import { Slider } from "@/components/Slider";
 import { Header } from "@/components/Header";
+import { Banner } from "@/components/Banner";
 
 export async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {});
@@ -21,8 +22,8 @@ export default async function Home() {
   return (
     <main>
       <Slider img={page.data.slidertest} />
-      <Header />
-      <section className="md:px-4" id="products">
+      <Header name={page.data.companyname} />
+      <section className="md:px-4 py-12" id="products">
         <h2 className="font-semibold text-3xl">Latest products</h2>
         <div className="flex w-full flex-wrap justify-center gap-2 md:justify-start md:gap-4">
           {products.map((product, index) => (
@@ -30,6 +31,12 @@ export default async function Home() {
           ))}
         </div>
       </section>
+      <Banner
+        subtitle={page.data.bannersubtitle}
+        title={page.data.bannertitle}
+        img={page.data.bannerimg}
+        content={page.data.bannercontent}
+      />
     </main>
   );
 }
