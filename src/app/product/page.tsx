@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Product(props?: any) {
   const { searchParams } = props;
-  const { price_id } = props;
+  const { price_id } = searchParams;
 
   const product = useCart((state?: any) => state.product);
   const addItem = useCart((state?: any) => state.addItem);
@@ -24,7 +24,7 @@ export default function Product(props?: any) {
   const handleAddToCart = () => {
     const newItem = {
       quantity: 1,
-      price_id: price_id,
+      price_id,
       name,
       cost,
     };
