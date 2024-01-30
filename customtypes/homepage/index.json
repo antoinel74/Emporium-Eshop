@@ -37,44 +37,6 @@
           }
         }
       },
-      "banner": {
-        "type": "Group",
-        "config": {
-          "label": "banner",
-          "repeat": true,
-          "fields": {
-            "img": {
-              "type": "Image",
-              "config": {
-                "label": "img",
-                "constraint": {},
-                "thumbnails": []
-              }
-            },
-            "title": {
-              "type": "Text",
-              "config": {
-                "label": "title",
-                "placeholder": ""
-              }
-            },
-            "subtitle": {
-              "type": "Text",
-              "config": {
-                "label": "subtitle",
-                "placeholder": ""
-              }
-            },
-            "content": {
-              "type": "Text",
-              "config": {
-                "label": "content",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      },
       "facebook": {
         "type": "Link",
         "config": {
@@ -97,13 +59,6 @@
           "label": "youtube",
           "placeholder": "",
           "select": null
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
         }
       },
       "bannerimg": {
@@ -133,6 +88,13 @@
         "config": {
           "label": "bannercontent",
           "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
         }
       }
     },

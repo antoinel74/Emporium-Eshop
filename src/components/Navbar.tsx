@@ -39,7 +39,6 @@ export const Navbar = () => {
   return (
     <>
       {openModal && <CartModal />}
-
       <nav
         className={`fixed top-0 z-30 flex w-full items-center justify-between p-4 transition-all duration-200 ease-in-out md:px-16 ${
           isScrolled ? (isHomepage ? "bg-white invert-0" : "bg-white") : isHomepage ? "invert" : ""

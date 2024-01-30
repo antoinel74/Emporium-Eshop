@@ -10,12 +10,11 @@ interface CartState {
   removeItem: (params: { itemIndex: number }) => void;
   emptyCart: () => void;
 }
+// Check if there are smthg in storage
+const storedState = typeof window !== "undefined" ? localStorage.getItem("cartState") : null;
+const initialState: CartState = storedState ? JSON.parse(storedState) : { cart: [], product: {}, openModal: true };
 
 const useCart = create<CartState>((set, get) => {
-  // Check if there are smthg in storage
-  const storedState = localStorage.getItem("cartState");
-  const initialState: CartState = storedState ? JSON.parse(storedState) : { cart: [], product: {}, openModal: true };
-
   return {
     ...initialState,
     setOpenModal: () => {

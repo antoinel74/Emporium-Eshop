@@ -19,51 +19,6 @@ export interface HomepageDocumentDataSlidertestItem {
   img: prismic.ImageField<never>;
 }
 
-/**
- * Item in *homepage → banner*
- */
-export interface HomepageDocumentDataBannerItem {
-  /**
-   * img field in *homepage → banner*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.banner[].img
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  img: prismic.ImageField<never>;
-
-  /**
-   * title field in *homepage → banner*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.banner[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * subtitle field in *homepage → banner*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.banner[].subtitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitle: prismic.KeyTextField;
-
-  /**
-   * content field in *homepage → banner*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.banner[].content
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  content: prismic.KeyTextField;
-}
-
 type HomepageDocumentDataSlicesSlice = never;
 
 /**
@@ -104,17 +59,6 @@ interface HomepageDocumentData {
   slidertest: prismic.GroupField<Simplify<HomepageDocumentDataSlidertestItem>>;
 
   /**
-   * banner field in *homepage*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.banner[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  banner: prismic.GroupField<Simplify<HomepageDocumentDataBannerItem>>;
-
-  /**
    * facebook field in *homepage*
    *
    * - **Field Type**: Link
@@ -146,17 +90,6 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   youtube: prismic.LinkField;
-
-  /**
-   * Slice Zone field in *homepage*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
 
   /**
    * bannerimg field in *homepage*
@@ -200,7 +133,18 @@ interface HomepageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  bannercontent: prismic.KeyTextField /**
+  bannercontent: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
    * Meta Description field in *homepage*
    *
    * - **Field Type**: Text
@@ -265,7 +209,6 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlidertestItem,
-      HomepageDocumentDataBannerItem,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
     };
