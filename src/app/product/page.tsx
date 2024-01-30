@@ -6,9 +6,11 @@ import Image from "next/image";
 export default function Product(props?: any) {
   const { searchParams } = props;
   const { price_id } = props;
-  const product = useCart((state?: any) => state.product);
-  const { cost, productInfo, name, description, type } = product;
 
+  const product = useCart((state?: any) => state.product);
+  const addItem = useCart((state?: any) => state.addItem);
+
+  const { cost, productInfo, name, description, type } = product;
   const brand = name.split(" ")[0];
   const nameWithoutBrand = name.split(" ").slice(1).join(" ");
 
@@ -18,6 +20,14 @@ export default function Product(props?: any) {
   if (!product?.name) {
     window.location.href = "/";
   }
+
+  const handleAddToCart = () => {
+    const newItem = {
+      quantity: 1,
+      price_id: price_id,
+    };
+    addItem({ newItem });
+  };
 
   return (
     <div>
@@ -37,7 +47,9 @@ export default function Product(props?: any) {
                 Add to Wishlist
               </button>
 
-              <button className={`my-2 block w-full rounded bg-black px-4 py-2 text-white`}>+ Add to Cart</button>
+              <button onClick={handleAddToCart} className={`my-2 block w-full rounded bg-black px-4 py-2 text-white`}>
+                + Add to Cart
+              </button>
               <span className="my-4 block h-[2px] w-full bg-gray-200"></span>
             </div>
             <p className="flex gap-2 opacity-50 uppercase font-semibold text-sm gap-2 items-center my-4">

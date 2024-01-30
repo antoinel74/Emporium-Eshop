@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-/* import { Cart } from "./Cart/CartModal"; */
+import useCart from "@/stores/cart.store";
 
 export const Navbar = () => {
   const pathname = usePathname();
-
+  const cartItems = useCart((state?: any) => state.cart);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState<boolean>(false);
@@ -83,7 +83,9 @@ export const Navbar = () => {
         {isMobile ? (
           <button onClick={handleCartToggle} className="flex">
             <img src="/cart.svg" />
-            <span className="notification-badge">{/* {cartItems} */}</span>
+            {cartItems.length > 0 && (
+              <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>
+            )}
           </button>
         ) : (
           <div className="flex items-center gap-6">
@@ -93,7 +95,9 @@ export const Navbar = () => {
             </Link>
             <button onClick={handleCartToggle} className="flex items-center gap-1">
               <img src="/cart.svg" />
-              <span className="h-6 w-6 rounded-full bg-black text-white">{/* {cartItems} */}</span>
+              {cartItems.length > 0 && (
+                <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>
+              )}
             </button>
           </div>
         )}
