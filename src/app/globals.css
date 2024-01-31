@@ -17,6 +17,14 @@ body {
   @apply hover:font-semibold transition-all;
 }
 
+.label {
+  @apply block opacity-50 uppercase font-semibold text-xs;
+}
+
+.input {
+  @apply border w-full rounded p-2 px-4 focus:outline-blue-200;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
