@@ -30,7 +30,7 @@ export const CheckoutStatus = () => {
         Checkout details
       </p>
       <p
-        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 border-black ${processing ? "opacity-50" : ""} ${success ? "opacity-100 border-green-500 text-green-500" : ""}`}
+        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 border-black ${processing ? "opacity-25" : ""} ${success ? "opacity-100 border-green-500 text-green-500" : ""}`}
       >
         <span
           className={`flex justify-center items-center rounded-full h-10 w-10 text-white ${success ? "bg-green-500" : "bg-black"}`}

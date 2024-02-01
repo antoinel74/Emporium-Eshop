@@ -34,11 +34,11 @@ export default function CartModal() {
             X
           </button>
         </div>
-        <div>
+        <div className="relative h-full">
           {!cartItems ? (
             <p>Your cart is empty</p>
           ) : (
-            <div className="overflow-scroll py-6">
+            <div className="overflow-x-scroll max-h-[65vh] py-6">
               {cartItems.map((cartItem: { quantity: number; name: string; cost: number }, itemIndex: number) => {
                 return (
                   <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
@@ -46,7 +46,7 @@ export default function CartModal() {
               })}
             </div>
           )}
-          <div className="my-4">
+          <div className="my-4 absolute bottom-0 inset-x-0">
             <div className="mt-auto flex w-full justify-between border-b-2 border-slate-200 opacity-75 pb-4">
               <span className="block">Subtotal &#40;excl. VAT&#41;</span>
               <span className="block font-semibold">€{subtotal.toFixed(2)}</span>

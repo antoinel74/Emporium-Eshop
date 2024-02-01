@@ -10,7 +10,7 @@ const Success = () => {
       <div className="shadow-lg bg-white max-w-sm mt-12 mx-auto space-y-4 p-4 text-center">
         <span className="block text-xl text-gray-400 font-medium">Thank you ! 🎉 </span>
         <h3 className="text-3xl font-medium">Your order has been received</h3>
-        <p className="opacity-50">
+        <p className="opacity-50 py-4">
           I'm currently working on shipment tracking and order data resume displaying, come back later to see the
           updates !
         </p>
