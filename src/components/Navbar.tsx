@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useCart from "@/stores/cart.store";
-import CartModal from "./CartModal";
+import CartModal from "./Cart/CartModal";
 
 export const Navbar = () => {
   const pathname = usePathname();
