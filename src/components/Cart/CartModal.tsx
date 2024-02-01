@@ -3,7 +3,7 @@ import React from "react";
 import useCart from "@/stores/cart.store";
 import ReactDOM from "react-dom";
 import Link from "next/link";
-import CartItem from "./CartItem";
+import { CartItem } from "..";
 
 export default function CartModal() {
   const closeModal = useCart((state?: any) => state.setOpenModal);
