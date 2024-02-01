@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
 import useCart from "@/stores/cart.store";
+import { useRouter } from "next/navigation";
 import { OrderForm } from "@/components/Forms/ContactInfo";
 import { ShippingInfo } from "@/components/Forms/ShippingInfo";
 import { CheckoutStatus } from "@/components/CheckoutStatus";
@@ -50,11 +50,12 @@ const CheckoutForm = () => {
         <div className="w-full md:w-[60%] space-y-4">
           <OrderForm />
           <ShippingInfo />
-          <button onClick={checkout} className="w-full bg-black text-white p-2 rounded">
+          <button onClick={checkout} className="w-full bg-black text-white p-2 rounded hover:opacity-80">
             Place Order
           </button>
         </div>
         <div className="w-full md:w-[40%] space-y-4">
+          <CartDisclaimer />
           <div className="border border-black rounded p-4">
             <h3 className="text-2xl font-medium">Summary</h3>
             {!cartItems ? (
@@ -78,7 +79,6 @@ const CheckoutForm = () => {
               Total <span>€{total.toFixed(2)}</span>
             </p>
           </div>
-          <CartDisclaimer />
         </div>
       </div>
     </div>

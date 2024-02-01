@@ -4,6 +4,7 @@ import { createClient } from "@/prismicio";
 import { Slider } from "@/components/Slider";
 import { Header } from "@/components/Header";
 import { Banner } from "@/components/Banner";
+import { Newsletters } from "@/components/Newsletters";
 
 export async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {});
@@ -37,6 +38,7 @@ export default async function Home() {
         img={page.data.bannerimg}
         content={page.data.bannercontent}
       />
+      <Newsletters />
     </main>
   );
 }

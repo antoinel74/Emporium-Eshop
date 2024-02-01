@@ -11,7 +11,7 @@ interface IBanner {
 
 export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => {
   return (
-    <div className="min-h-[80vh] w-full md:flex">
+    <div className="min-h-[80vh] w-full md:flex bg-slate-100">
       <div className="relative h-full min-h-[40vh] w-full md:h-full md:min-h-[80vh] md:w-1/2">
         <PrismicNextImage field={img} fill className="absolute h-full w-full object-cover" />
       </div>
