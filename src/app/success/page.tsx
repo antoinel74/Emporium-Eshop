@@ -1,11 +1,23 @@
 import React from "react";
 import { CheckoutStatus } from "@/components/CheckoutStatus";
+import Link from "next/link";
 
 const Success = () => {
   return (
     <div className="min-h-screen w-full bg-white mt-24">
-      <h2 className="md:text-3xl text-4xl font-semibold text-center">Order Complete !</h2>
+      <h2 className="text-4xl font-medium text-center">Order Complete !</h2>
       <CheckoutStatus />
+      <div className="shadow-lg bg-white max-w-sm mt-12 mx-auto space-y-4 p-4 text-center">
+        <span className="block text-xl text-gray-400 font-medium">Thank you ! 🎉 </span>
+        <h3 className="text-3xl font-medium">Your order has been received</h3>
+        <p className="opacity-50">
+          I'm currently working on shipment tracking and order data resume displaying, come back later to see the
+          updates !
+        </p>
+        <Link href="/" className="block rounded hover:opacity-75 bg-black w-full text-white p-2 px-4">
+          Back to homepage
+        </Link>
+      </div>
     </div>
   );
 };
