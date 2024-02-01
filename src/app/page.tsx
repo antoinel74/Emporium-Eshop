@@ -1,10 +1,7 @@
 import Stripe from "stripe";
 import ProductCard from "@/components/ProductCard";
 import { createClient } from "@/prismicio";
-import { Slider } from "@/components/Slider";
-import { Header } from "@/components/Header";
-import { Banner } from "@/components/Banner";
-import { Newsletters } from "@/components/Newsletters";
+import { Slider, Header, Banner, Newsletters } from "@/components";
 
 export async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {});

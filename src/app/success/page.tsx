@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckoutStatus } from "@/components/CheckoutStatus";
+import { CheckoutStatus } from "@/components";
 import Link from "next/link";
 
 const Success = () => {

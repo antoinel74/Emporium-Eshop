@@ -9,7 +9,7 @@ interface CartItemProps {
   onRemoveItem: () => void;
 }
 
-const CartItem: React.FC<CartItemProps> = ({ cartItem, onRemoveItem }) => {
+export const CartItem: React.FC<CartItemProps> = ({ cartItem, onRemoveItem }) => {
   return (
     <div className="my-4 border-b pb-2">
       <div className="flex justify-between font-medium">
@@ -26,5 +26,3 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onRemoveItem }) => {
     </div>
   );
 };
-
-export default CartItem;

@@ -2,11 +2,7 @@
 import React from "react";
 import useCart from "@/stores/cart.store";
 import { useRouter } from "next/navigation";
-import { OrderForm } from "@/components/Forms/ContactInfo";
-import { ShippingInfo } from "@/components/Forms/ShippingInfo";
-import { CheckoutStatus } from "@/components/CheckoutStatus";
-import CartItem from "@/components/Cart/CartItem";
-import { CartDisclaimer } from "@/components/Cart/CartDisclaimer";
+import { OrderForm, ShippingInfo, CheckoutStatus, CartItem, CartDisclaimer } from "@/components/";
 
 const CheckoutForm = () => {
   const cartItems = useCart((state?: any) => state.cart);
