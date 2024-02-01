@@ -1,15 +1,23 @@
+"use client";
 import React from "react";
 import useCart from "@/stores/cart.store";
 import ReactDOM from "react-dom";
 import Link from "next/link";
+import CartItem from "./Cart/CartItem";
 
 export default function CartModal() {
   const closeModal = useCart((state?: any) => state.setOpenModal);
   const cartItems = useCart((state?: any) => state.cart);
+  const removeItem = useCart((state?: any) => state.removeItem);
 
   const handleCheckoutClick = () => {
     closeModal();
   };
+
+  const handleRemoveItem = (itemIndex: number) => {
+    removeItem({ itemIndex });
+  };
+
   /*   console.log(cartItems); */
 
   const total = cartItems.reduce((acc: number, item: any) => acc + (item.cost / 100 || 0) * (item.quantity || 0), 0);
@@ -33,11 +41,7 @@ export default function CartModal() {
             <div className="overflow-scroll py-6">
               {cartItems.map((cartItem: { quantity: number; name: string; cost: number }, itemIndex: number) => {
                 return (
-                  <div key={itemIndex}>
-                    <p>Quantity: {cartItem.quantity}</p>
-                    <p>Name: {cartItem.name}</p>
-                    <p>€{cartItem.cost / 100}</p>
-                  </div>
+                  <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
                 );
               })}
             </div>

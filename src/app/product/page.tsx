@@ -32,7 +32,7 @@ export default function Product(props?: any) {
   };
 
   return (
-    <div>
+    <div className="mb-12">
       {name && (
         <div className="flex flex-col lg:flex-row min-h-screen w-full mt-16 lg:mt-24 lg:px-16">
           <figure className="relative w-full lg:w-1/2 min-h-[500px] mx-auto">
