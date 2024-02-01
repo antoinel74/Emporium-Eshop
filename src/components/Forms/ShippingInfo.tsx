@@ -18,9 +18,9 @@ export const ShippingInfo = () => {
       </div>
       <div className="space-y-2 pb-4">
         <label htmlFor="city" className="label">
-          Town / City
+          Town / City *
         </label>
-        <input name="city" type="text" placeholder="Town / City" className="input" />
+        <input name="city" type="text" placeholder="Town / City" className="input" required />
       </div>
       <div className="flex gap-4 w-full">
         <div className="w-full space-y-2">
@@ -31,9 +31,9 @@ export const ShippingInfo = () => {
         </div>
         <div className="w-full space-y-2">
           <label htmlFor="zip" className="label">
-            Name
+            Zip code *
           </label>
-          <input name="zip" type="text" placeholder="Zip Code" className="input" />
+          <input name="zip" type="text" placeholder="Zip Code" className="input" required />
         </div>
       </div>
     </form>

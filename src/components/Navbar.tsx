@@ -35,6 +35,7 @@ export const Navbar = () => {
   }, []);
 
   const isHomepage = pathname === "/";
+  const totalQuantity = cartItems.reduce((acc: number, item: any) => acc + item.quantity, 0);
 
   return (
     <>
@@ -69,23 +70,24 @@ export const Navbar = () => {
         )}
 
         {isMobile ? (
-          <button className="flex" onClick={handleOpenModal}>
+          <button className="flex items-center" onClick={handleOpenModal}>
             <img src="/cart.svg" />
-            {cartItems.length > 0 && (
-              <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>
-            )}
+            <span
+              className={`ml-1 h-5 w-5 flex items-center justify-center text-sm rounded-full bg-black text-white ${totalQuantity === 0 ? "hidden" : ""}`}
+            >
+              {totalQuantity}
+            </span>
           </button>
         ) : (
           <div className="flex items-center gap-6">
             <img src="/search.svg" />
-            <Link href="/account">
-              <img src="/user.svg" />
-            </Link>
             <button onClick={handleOpenModal} className="flex items-center gap-1">
               <img src="/cart.svg" />
-              {cartItems.length > 0 && (
-                <span className="h-6 w-6 rounded-full bg-black text-white">{cartItems.length}</span>
-              )}
+              <span
+                className={`ml-1 h-5 w-5 flex items-center justify-center text-sm rounded-full bg-black text-white ${totalQuantity === 0 ? "hidden" : ""}`}
+              >
+                {totalQuantity}
+              </span>
             </button>
           </div>
         )}

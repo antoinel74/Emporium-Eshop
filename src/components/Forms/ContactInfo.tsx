@@ -7,15 +7,15 @@ export const OrderForm = () => {
       <div className="flex gap-4 w-full">
         <div className="w-full space-y-2">
           <label htmlFor="firstname" className="label">
-            First Name
+            First Name *
           </label>
-          <input name="firstname" type="text" placeholder="First Name" className="input" />
+          <input name="firstname" type="text" placeholder="First Name" className="input" required />
         </div>
         <div className="w-full space-y-2">
           <label htmlFor="name" className="label">
-            Name
+            Name *
           </label>
-          <input name="name" type="text" placeholder="Name" className="input" />
+          <input name="name" type="text" placeholder="Name" className="input" required />
         </div>
       </div>
       <div className="space-y-2">
@@ -26,9 +26,9 @@ export const OrderForm = () => {
       </div>
       <div className="space-y-2 pb-4">
         <label htmlFor="email" className="label">
-          Email Adress
+          Email Adress *
         </label>
-        <input name="email" type="email" placeholder="Your Email" className="input" />
+        <input name="email" type="email" placeholder="Your Email" className="input" required />
       </div>
     </form>
   );
