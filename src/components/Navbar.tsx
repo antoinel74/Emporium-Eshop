@@ -72,22 +72,18 @@ export const Navbar = () => {
         {isMobile ? (
           <button className="flex items-center" onClick={handleOpenModal}>
             <img src="/cart.svg" />
-            <span
-              className={`ml-1 h-5 w-5 flex items-center justify-center text-sm rounded-full bg-black text-white ${totalQuantity === 0 ? "hidden" : ""}`}
-            >
-              {totalQuantity}
-            </span>
+            {totalQuantity ?? (
+              <span className={`ml-1 text-sm ${totalQuantity === 0 ? "hidden" : ""}`}>{totalQuantity}</span>
+            )}
           </button>
         ) : (
           <div className="flex items-center gap-6">
             <img src="/search.svg" />
             <button onClick={handleOpenModal} className="flex items-center gap-1">
               <img src="/cart.svg" />
-              <span
-                className={`ml-1 h-5 w-5 flex items-center justify-center text-sm rounded-full bg-black text-white ${totalQuantity === 0 ? "hidden" : ""}`}
-              >
-                {totalQuantity}
-              </span>
+              {totalQuantity ?? (
+                <span className={`ml-1 text-sm ${totalQuantity === 0 ? "hidden" : ""}`}>{totalQuantity}</span>
+              )}
             </button>
           </div>
         )}
