@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Cancel = () => {
   return (
-    <div className="min-h-screen w-full bg-white mt-24">
+    <div className="w-full bg-white my-24">
       <h2 className="text-4xl font-medium text-center">Order canceled</h2>
       <CheckoutStatus />
       <div className="shadow-lg bg-white max-w-sm mt-12 mx-auto space-y-4 p-4 text-center">
