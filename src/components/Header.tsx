@@ -22,9 +22,9 @@ export const Header: React.FC<Iheader> = ({ name }) => {
         </div>
       </div>
       <p className="w-full md:w-1/2">
-        And we provide stuff. Whether you're shredding the slopes on freeride skis, carving through powder on a
-        snowboard, or conquering the peaks with alpinism gear, we've got you covered. Gear up and conquer the slopes
-        with us!
+        And we provide stuff. Whether you&apos;re shredding the slopes on freeride skis, carving through powder on a
+        snowboard, or conquering the peaks with alpinism gear, wev&apos;e got you covered. Gear up and conquer the
+        slopes with us!
       </p>
     </div>
   );
