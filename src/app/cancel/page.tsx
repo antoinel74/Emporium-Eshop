@@ -11,7 +11,7 @@ const Cancel = () => {
         <span className="block text-xl text-gray-400 font-medium">Oh no... 😭 </span>
         <h3 className="text-3xl font-medium">Order canceled</h3>
         <p className="opacity-50 py-4">
-          But don't worry, we've keeped the item warm for you, safe in your cart until your next visit.
+          But don&apos;t worry, we&apos;ve keeped the item warm for you, safe in your cart until your next visit.
         </p>
         <Link href="/" className="block rounded hover:opacity-75 bg-black w-full text-white p-2 px-4">
           Back to homepage
