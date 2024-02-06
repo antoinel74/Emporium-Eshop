@@ -18,6 +18,10 @@ export default function CartModal() {
     removeItem({ itemIndex });
   };
 
+  if (typeof document === "undefined") {
+    return null;
+  }
+
   /*   console.log(cartItems); */
 
   const total = cartItems.reduce((acc: number, item: any) => acc + (item.cost / 100 || 0) * (item.quantity || 0), 0);
