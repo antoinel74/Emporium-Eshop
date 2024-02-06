@@ -1,28 +1,34 @@
 import React from "react";
+import Image from "next/image";
 
 interface CartItemProps {
   cartItem: {
     quantity: number;
     name: string;
     cost: number;
+    image: string;
   };
   onRemoveItem: () => void;
 }
 
 export const CartItem: React.FC<CartItemProps> = ({ cartItem, onRemoveItem }) => {
   return (
-    <div className="my-4 border-b pb-2">
-      <div className="flex justify-between font-medium">
-        <p>{cartItem.name}</p>
-        <span>€{cartItem.cost / 100}</span>
+    <div className="my-4 flex gap-2 border-b pb-2">
+      <figure className="h-24  w-20 relative">
+        <Image src={cartItem.image} alt={cartItem.name} fill className="object-cover rounded" />
+      </figure>
+
+      <div>
+        <p className="font-medium">{cartItem.name}</p>
+        <p className="opacity-50 text-sm">Quantity: {cartItem.quantity}</p>
+        <button
+          onClick={onRemoveItem}
+          className="p-1 border hover:border-black hover:bg-transparent bg-gray-100 px-2 text-xs rounded my-2"
+        >
+          Remove
+        </button>
       </div>
-      <p className="opacity-50">Quantity: {cartItem.quantity}</p>
-      <button
-        onClick={onRemoveItem}
-        className="p-1 border hover:border-black hover:bg-transparent bg-gray-100 px-2 rounded my-2"
-      >
-        Remove
-      </button>
+      <span className="ml-auto">€{cartItem.cost / 100}</span>
     </div>
   );
 };

@@ -9,6 +9,5 @@ export * from "./Forms/ContactInfo";
 export * from "./Forms/ShippingInfo";
 export * from "./Header";
 export * from "./Navbar";
-export * from "./Newsletters";
 export * from "./ProductCard";
 export * from "./Slider";

@@ -26,7 +26,6 @@ const useCart = create<CartState>((set, get) => {
 
         // saving
         localStorage.setItem("cartState", JSON.stringify(newState));
-
         return newState;
       });
     },

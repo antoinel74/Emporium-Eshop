@@ -9,6 +9,7 @@ export default function Product(props?: any) {
 
   const product = useCart((state?: any) => state.product);
   const addItem = useCart((state?: any) => state.addItem);
+  const toggleModal = useCart((state?: any) => state.setOpenModal);
 
   const { cost, productInfo, name, description, type } = product;
   const brand = name.split(" ")[0];
@@ -27,8 +28,10 @@ export default function Product(props?: any) {
       price_id,
       name,
       cost,
+      image: productInfo.images[0],
     };
     addItem({ newItem });
+    toggleModal();
   };
 
   return (

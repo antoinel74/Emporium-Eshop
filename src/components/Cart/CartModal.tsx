@@ -39,11 +39,13 @@ export default function CartModal() {
             <p>Your cart is empty</p>
           ) : (
             <div className="overflow-x-scroll max-h-[65vh] py-6">
-              {cartItems.map((cartItem: { quantity: number; name: string; cost: number }, itemIndex: number) => {
-                return (
-                  <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
-                );
-              })}
+              {cartItems.map(
+                (cartItem: { quantity: number; name: string; cost: number; image: string }, itemIndex: number) => {
+                  return (
+                    <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
+                  );
+                }
+              )}
             </div>
           )}
           <div className="my-4 absolute bottom-0 inset-x-0">
