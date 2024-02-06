@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ShippingInfo = () => {
+export const ShippingForm = () => {
   return (
     <form className="border border-black p-4 border black rounded">
       <h3 className="text-2xl font-medium mb-4">Shipping Address</h3>

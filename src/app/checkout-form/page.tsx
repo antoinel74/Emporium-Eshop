@@ -2,7 +2,7 @@
 import React from "react";
 import useCart from "@/stores/cart.store";
 import { useRouter } from "next/navigation";
-import { OrderForm, ShippingInfo, CheckoutStatus, CartItem, CartDisclaimer } from "@/components/";
+import { OrderForm, ShippingForm, CheckoutStatus, CartItem, CartDisclaimer } from "@/components/";
 
 const CheckoutForm = () => {
   const cartItems = useCart((state?: any) => state.cart);
@@ -45,7 +45,7 @@ const CheckoutForm = () => {
       <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center px-4 md:px-8 my-6">
         <div className="w-full md:w-[60%] space-y-4">
           <OrderForm />
-          <ShippingInfo />
+          <ShippingForm />
           <button onClick={checkout} className="w-full bg-black text-white p-2 rounded hover:opacity-80">
             Place Order
           </button>
@@ -58,11 +58,13 @@ const CheckoutForm = () => {
               <p>Your cart is empty</p>
             ) : (
               <div className="overflow-scroll py-4">
-                {cartItems.map((cartItem: { quantity: number; name: string; cost: number }, itemIndex: number) => {
-                  return (
-                    <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
-                  );
-                })}
+                {cartItems.map(
+                  (cartItem: { quantity: number; name: string; cost: number; image: string }, itemIndex: number) => {
+                    return (
+                      <CartItem key={itemIndex} cartItem={cartItem} onRemoveItem={() => handleRemoveItem(itemIndex)} />
+                    );
+                  }
+                )}
               </div>
             )}
             <p className="flex justify-between border-b py-2">

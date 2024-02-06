@@ -15,8 +15,8 @@ export default function Product(props?: any) {
   const brand = name.split(" ")[0];
   const nameWithoutBrand = name.split(" ").slice(1).join(" ");
 
-  console.log(product);
-  console.log(searchParams);
+  /*   console.log(product);
+  console.log(searchParams); */
 
   if (!product?.name) {
     window.location.href = "/";
