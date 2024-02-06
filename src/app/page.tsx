@@ -1,16 +1,7 @@
-import Stripe from "stripe";
 import ProductCard from "@/components/ProductCard";
 import { createClient } from "@/prismicio";
 import { Slider, Header, Banner } from "@/components";
-
-export async function getStripeProducts() {
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {});
-  const res = await stripe.prices.list({
-    expand: ["data.product"],
-  });
-  const prices = res.data;
-  return prices;
-}
+import { getStripeProducts } from "@/libs/getStripeProducts";
 
 export default async function Home() {
   const products = await getStripeProducts();
