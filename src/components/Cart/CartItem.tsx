@@ -23,7 +23,7 @@ export const CartItem: React.FC<CartItemProps> = ({ cartItem, onRemoveItem }) =>
         <p className="opacity-50 text-sm">Quantity: {cartItem.quantity}</p>
         <button
           onClick={onRemoveItem}
-          className="p-1 border hover:border-black hover:bg-transparent bg-gray-100 px-2 text-xs rounded my-2"
+          className="p-1 link-hover hover:border-black hover:bg-transparent bg-gray-100 px-2 text-xs rounded my-2"
         >
           Remove
         </button>

@@ -6,11 +6,12 @@ export const CheckoutStatus = () => {
   const pathname = usePathname();
   const processing = pathname === "/checkout-form";
   const success = pathname === "/success";
+  const cancel = pathname === "/cancel";
 
   return (
-    <div className="hidden md:flex gap-8 text-sm py-2 mt-12 justify-center">
+    <div className={`hidden md:flex gap-8 text-sm py-2 mt-12 justify-center ${cancel ? "opacity-50" : ""}`}>
       <p
-        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 ${processing || success ? "text-green-500 border-green-500" : ""}`}
+        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 ${processing || success ? "text-green-500 border-green-500" : "border-black"}`}
       >
         <span
           className={`flex justify-center items-center rounded-full h-10 w-10 ${processing || success ? "bg-green-500" : "bg-black"} text-white`}
