@@ -18,7 +18,7 @@ export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => 
       <div className="my-auto w-full space-y-4 px-8 py-8 md:w-1/2 md:py-0">
         <span className="font-semibold uppercase text-blue-500">{subtitle}</span>
         <h2 className="text-[clamp(2.5rem,4vw,5rem)] font-semibold leading-tight">{title}</h2>
-        <p className="pb-4 xl:text-xl">{content}</p>
+        <p className="pb-4">{content}</p>
         <PrismicNextLink href="/products" className="link-hover">
           Discover now -&gt;
         </PrismicNextLink>
