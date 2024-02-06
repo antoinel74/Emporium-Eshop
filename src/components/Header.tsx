@@ -20,8 +20,8 @@ export const Header: React.FC<Iheader> = ({ name }) => {
         </div>
       </div>
       <p className="w-full md:w-1/2 xl:text-xl">
-        At <span className="font-bold">{name}</span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia
-        unde, magni omnis nisi sapiente quaerat facilis non molestiae. Lorem ipsum dolor sit.
+        At <span className="font-bold">{name}</span> we provide stuff from skis to snowboards and alpinism equipment,
+        we've got everything you need for your next adventure. Gear up and conquer the slopes with us!
       </p>
     </div>
   );
