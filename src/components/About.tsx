@@ -8,7 +8,7 @@ interface Iheader {
 
 export const Header: React.FC<Iheader> = ({ name }) => {
   return (
-    <div className="flex flex-col justify-between gap-2 px-4 py-10 md:flex-row md:gap-0 md:px-16">
+    <div className="flex flex-col justify-between gap-2 px-4 py-12 md:flex-row md:gap-0 md:px-8">
       <div className="h-full w-full md:w-1/2">
         <h2 className="flex flex-col text-[clamp(1rem,2vw,1.25rem)] opacity-50">About us</h2>
       </div>

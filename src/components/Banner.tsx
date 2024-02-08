@@ -11,17 +11,21 @@ interface IBanner {
 
 export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => {
   return (
-    <div className="min-h-[80vh] w-full md:flex bg-slate-100">
-      <div className="relative h-full min-h-[40vh] w-full md:h-full md:min-h-[80vh] md:w-1/2">
-        <PrismicNextImage field={img} fill className="absolute h-full w-full object-cover" />
-      </div>
-      <div className="my-auto w-full space-y-4 px-8 py-8 md:w-1/2 md:py-0">
-        <span className="font-semibold uppercase text-blue-500">{subtitle}</span>
-        <h2 className="text-[clamp(2.5rem,4vw,5rem)] font-semibold leading-tight">{title}</h2>
-        <p className="pb-4">{content}</p>
-        <PrismicNextLink href="/products" className="link-hover">
-          Discover now -&gt;
-        </PrismicNextLink>
+    <div className="min-h-[80vh] w-full px-8">
+      <figure className="relative h-full w-full aspect-[16/9] flex justify-center items-center">
+        <PrismicNextImage field={img} fill className="absolute h-full w-full object-cover rounded-lg" />
+        <div className="absolute z-50 bg-white  w-2/3 h-2/3"></div>
+      </figure>
+      <div className="flex flex-col items-end py-24 pr-12">
+        <div className="pb-4 w-[80%] md:w-[70%]">
+          <p className="text-[clamp(1.5rem,2vw,2.5rem)]">{content}</p>
+          <PrismicNextLink
+            href="/"
+            className="text-slate-400 group text-[clamp(1rem,2vw,1.5rem)] block pt-6 underline underline-offset-8 transition-all"
+          >
+            Discover Now -&gt;
+          </PrismicNextLink>
+        </div>
       </div>
     </div>
   );

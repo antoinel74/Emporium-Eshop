@@ -23,7 +23,7 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
           alt={`${currentImgIndex + 1}`}
           className="absolute object-cover"
         />
-        <div className="absolute bottom-4 left-4 md:left-16  z-20 text-white flex items-center gap-2 font-inconsolata">
+        <div className="absolute bottom-4 left-4 md:left-8  z-20 text-white flex items-center gap-2 font-inconsolata">
           <span className="flex items-center">0{currentImgIndex + 1}</span>
           <span className="h-[1px] w-6 bg-white inline-block" />
           <button onClick={nextImg} className="hover:opacity-50">
