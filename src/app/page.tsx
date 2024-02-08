@@ -2,7 +2,6 @@ import ProductCard from "@/components/ProductCard";
 import { createClient } from "@/prismicio";
 import { Slider, Header, Banner } from "@/components";
 import { getStripeProducts } from "@/libs/getStripeProducts";
-import { Canvas } from "@/components/Canvas";
 
 export default async function Home() {
   const products = await getStripeProducts();
@@ -27,7 +26,6 @@ export default async function Home() {
         img={page.data.bannerimg}
         content={page.data.bannercontent}
       />
-      <Canvas />
     </main>
   );
 }

@@ -57,13 +57,13 @@ export const Navbar = () => {
         </Link>
 
         {isMobile ? (
-          <button onClick={handleOpenMenu} className="group mr-auto flex cursor-pointer flex-col space-y-[3px]">
+          <button onClick={handleOpenMenu} className="group mr-auto ml-2 flex cursor-pointer flex-col space-y-[3px]">
             <span className="block h-[2px] w-6 rounded bg-black transition-all group-hover:w-4"></span>
             <span className="block h-[2px] w-4 rounded bg-black transition-all group-hover:w-6"></span>
             <span className="block h-[2px] w-3 rounded bg-black transition-all group-hover:w-4"></span>
           </button>
         ) : (
-          <ul className="navTheme-ul flex gap-4 ml-auto px-6">
+          <ul className="navTheme-ul flex gap-4 ml-auto px-6 text-sm tracking-wide">
             {[
               ["Home", "/"],
               ["Products", "/#products"],
