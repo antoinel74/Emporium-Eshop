@@ -15,13 +15,13 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
   };
 
   return (
-    <div className="slider-container w-full">
+    <div className="slider-container w-full px-4 md:px-14">
       <figure className="relative aspect-[16/7] w-full">
         <Image
           src={img[currentImgIndex].img.url}
           fill
           alt={`${currentImgIndex + 1}`}
-          className="absolute object-cover"
+          className="absolute object-cover rounded"
         />
         <div className="absolute bottom-4 left-4 md:left-8  z-20 text-white flex items-center gap-2 font-inconsolata">
           <span className="flex items-center">0{currentImgIndex + 1}</span>

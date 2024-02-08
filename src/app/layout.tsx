@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Epilogue } from "next/font/google";
 import "./globals.css";
 import { Navbar, Foot } from "@/components";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Epilogue({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Emporium Eshop",

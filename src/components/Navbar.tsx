@@ -49,7 +49,7 @@ export const Navbar = () => {
       {openMenu && <MobileMenu handleClose={handleOpenMenu} />}
       <nav
         className={`fixed top-0 z-30 flex w-full items-center justify-between p-4 transition-all duration-200 ease-in-out md:px-16 ${
-          isScrolled ? (isHomepage ? "bg-white invert-0" : "bg-white") : isHomepage ? "invert" : ""
+          isScrolled ? (isHomepage ? "bg-white invert-0" : "bg-white") : isHomepage ? "hidden" : ""
         }`}
       >
         <Link href="/" className="text-lg font-semibold uppercase">

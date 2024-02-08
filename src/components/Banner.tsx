@@ -11,12 +11,12 @@ interface IBanner {
 
 export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => {
   return (
-    <div className="min-h-[80vh] w-full px-8">
+    <div className="min-h-[80vh] w-full px-8 md:px-16">
       <figure className="relative h-full w-full aspect-[16/9] flex justify-center items-center">
         <PrismicNextImage field={img} fill className="absolute h-full w-full object-cover rounded-lg" />
         <div className="absolute z-50 bg-white  w-2/3 h-2/3"></div>
       </figure>
-      <div className="flex flex-col items-end py-24 pr-12">
+      <div className="flex flex-col items-end py-24 mr-8 md:mr-16">
         <div className="pb-4 w-[80%] md:w-[70%]">
           <p className="text-[clamp(1.5rem,2vw,2.5rem)]">{content}</p>
           <PrismicNextLink
