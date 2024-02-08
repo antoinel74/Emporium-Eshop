@@ -14,12 +14,6 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
     setCurrentImgIndex((prevIndex) => (prevIndex + 1) % img.length);
   };
 
-  const prevImg = () => {
-    setCurrentImgIndex((prevIndex) => (prevIndex - 1 + img.length) % img.length);
-  };
-
-  const isLast = currentImgIndex !== 0;
-
   return (
     <div className="slider-container w-full">
       <figure className="relative aspect-[16/7] w-full">
@@ -29,13 +23,9 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
           alt={`${currentImgIndex + 1}`}
           className="absolute object-cover"
         />
-        <div
-          className={`absolute bottom-4 right-4 z-20 text-white flex items-center gap-2 rounded md:right-20 font-inconsolata`}
-        >
-          <button className="h-2 ml-2 w-auto flex items-center" onClick={nextImg}>
-            0{currentImgIndex + 1}
-            <span className="h-[1px] w-6 ml-2 bg-white inline-block" />
-          </button>
+        <div className="absolute bottom-4 left-4 md:left-16  z-20 text-white flex items-center gap-2 font-inconsolata">
+          <span className="flex items-center">0{currentImgIndex + 1}</span>
+          <span className="h-[1px] w-6 bg-white inline-block" />
           <button onClick={nextImg} className="hover:opacity-50">
             {currentImgIndex === 0 ? "Next" : "Prev"}
           </button>

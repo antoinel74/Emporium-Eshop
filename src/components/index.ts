@@ -7,7 +7,7 @@ export * from "./Clock";
 export * from "./Footer";
 export * from "./Forms/ContactInfo";
 export * from "./Forms/ShippingInfo";
-export * from "./Header";
+export * from "./About";
 export * from "./Navbar";
 export * from "./ProductCard";
 export * from "./Slider";

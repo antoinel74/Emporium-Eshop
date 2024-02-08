@@ -10,7 +10,6 @@ const config: Config = {
     extend: {
       fontFamily: {
         inconsolata: ['"Inconsolata"', "monospace"],
-        // Add more custom font families as needed
       },
       animation: {
         "spin-slow": "spin 4s linear infinite",

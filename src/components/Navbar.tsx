@@ -52,7 +52,7 @@ export const Navbar = () => {
           isScrolled ? (isHomepage ? "bg-white invert-0" : "bg-white") : isHomepage ? "invert" : ""
         }`}
       >
-        <Link href="/" className="mr-2 text-lg font-semibold uppercase">
+        <Link href="/" className="text-lg font-semibold uppercase">
           Emporium
         </Link>
 
@@ -69,7 +69,7 @@ export const Navbar = () => {
               ["Products", "/#products"],
               ["Contact", "/#contact"],
             ].map(([title, url]) => (
-              <Link key={title} href={url} className="px-2 opacity-70 hover:opacity-100">
+              <Link key={title} href={url} className="px-2 hover:opacity-75">
                 {title}
               </Link>
             ))}
@@ -77,7 +77,7 @@ export const Navbar = () => {
         )}
 
         <div className="flex items-center gap-6">
-          <img src="/search.svg" className="hidden md:blocks" />
+          <img src="/search.svg" className="hidden md:block" />
           <button onClick={handleOpenModal} className="flex items-center gap-1">
             <img src="/cart.svg" />
             {totalQuantity ?? <span className="ml-1 text-sm">{totalQuantity}</span>}
