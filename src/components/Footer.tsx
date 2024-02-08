@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DynamicClock } from ".";
+import { BackToTop } from "./BackToTop";
 
 export const Foot = () => {
   const navigationLinks = [
@@ -10,7 +11,6 @@ export const Foot = () => {
     { text: "Account", url: "/" },
     { text: "Contact", url: "/" },
   ];
-  const companyName = "Emporium";
 
   return (
     <footer className="bg-[#181819] py-12 pr-4 text-white md:pr-16" id="contact">
@@ -33,10 +33,7 @@ export const Foot = () => {
           <DynamicClock />
         </div>
       </div>
-      <div className="bg-white flex md:justify-between justify-center items-center rounded h-16 w-1/6 ml-4">
-        <h3 className="text-[#181819] text-2xl px-4 uppercase font-semibold hidden md:block">{companyName}</h3>
-        <Image src="/arrow-up.svg" alt="back-to-top" className="mb-1 mr-2 cursor-pointer" height={35} width={35} />
-      </div>
+      <BackToTop />
     </footer>
   );
 };
