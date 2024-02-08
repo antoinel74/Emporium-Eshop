@@ -10,7 +10,7 @@ export const Clock: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <span>{currentTime.toLocaleTimeString("fr-FR", { timeZoneName: "short" })}</span>;
+  return <span>{currentTime.toLocaleTimeString("fr-FR")}</span>;
 };
 
 // Disable server side rendering to avoid hydration error on time

@@ -63,7 +63,7 @@ export const Navbar = () => {
             <span className="block h-[2px] w-3 rounded bg-black transition-all group-hover:w-4"></span>
           </button>
         ) : (
-          <ul className="navTheme-ul flex gap-4">
+          <ul className="navTheme-ul flex gap-4 ml-auto px-6">
             {[
               ["Home", "/"],
               ["Products", "/#products"],

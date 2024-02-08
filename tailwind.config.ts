@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inconsolata: ['"Inconsolata"', "monospace"],
+        // Add more custom font families as needed
+      },
       animation: {
-        "spin-slow": "spin 2s linear infinite",
+        "spin-slow": "spin 4s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

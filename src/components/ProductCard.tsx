@@ -27,9 +27,9 @@ export default function ProductCard(props?: any) {
       onClick={onClick}
       className="group h-full w-full max-w-xs relative mt-4 rounded hover:-translate-y-2 transition-all"
     >
-      <figure className="relative h-[400px] w-full">
+      <figure className="relative min-h-[400px] w-full">
         <Link href={`/product/?price_id=${price_id}`}>
-          <Image src={productInfo.images[0]} alt={name} fill className="object-cover h-full w-full" />
+          <Image src={productInfo.images[0]} alt={name} fill className="object-cover" />
         </Link>
       </figure>
 
