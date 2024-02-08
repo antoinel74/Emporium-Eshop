@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface ISlider {
@@ -12,6 +12,13 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
   const nextImg = () => {
     setCurrentImgIndex((prevIndex) => (prevIndex + 1) % img.length);
   };
+
+  useEffect(() => {
+    const delay = 5000;
+    const timeoutId = setTimeout(nextImg, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentImgIndex]);
 
   return (
     <div className="slider-container w-full px-4 md:px-14">
