@@ -12,3 +12,4 @@ export * from "./Navbar";
 export * from "./ProductCard";
 export * from "./Slider";
 export * from "./MobileMenu";
+export * from "./MainTitle";
