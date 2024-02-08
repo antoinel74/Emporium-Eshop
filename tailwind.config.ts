@@ -17,6 +17,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@xpd/tailwind-3dtransforms")],
+  plugins: [],
 };
 export default config;
