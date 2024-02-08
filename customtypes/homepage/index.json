@@ -96,6 +96,23 @@
         "config": {
           "choices": {}
         }
+      },
+      "bannerslider": {
+        "type": "Group",
+        "config": {
+          "label": "bannerslider",
+          "repeat": true,
+          "fields": {
+            "img": {
+              "type": "Image",
+              "config": {
+                "label": "img",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
       }
     },
     "SEO & Metadata": {

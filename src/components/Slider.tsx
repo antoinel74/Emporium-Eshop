@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { DynamicClock } from "@/components";
 
 interface ISlider {
   img?: any;

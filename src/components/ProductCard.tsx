@@ -7,7 +7,7 @@ import useCart from "@/stores/cart.store";
 export default function ProductCard(props?: any) {
   const { product } = props;
   const { id: price_id, unit_amount: cost, product: productInfo } = product;
-  const { name, description } = productInfo;
+  const { name } = productInfo;
   const brand = name.split(" ")[0];
   const nameWithoutBrand = name.split(" ").slice(1).join(" ");
   const setProduct = useCart((state?: any) => state.setProduct);

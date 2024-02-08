@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <main>
-      <MainTitle />
+      <MainTitle title="Emporium is a e-shop for extreme winter sports enthusiasts." />
       <Slider img={page.data.slidertest} />
       <Header name={page.data.companyname} />
       <section className="py-12 min-h-screen w-full h-full" id="products">
@@ -21,12 +21,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <Banner
-        subtitle={page.data.bannersubtitle}
-        title={page.data.bannertitle}
-        img={page.data.bannerimg}
-        content={page.data.bannercontent}
-      />
+      <Banner img={page.data.bannerimg} content={page.data.bannercontent} />
     </main>
   );
 }

@@ -22,6 +22,21 @@ export interface HomepageDocumentDataSlidertestItem {
 type HomepageDocumentDataSlicesSlice = never;
 
 /**
+ * Item in *homepage → bannerslider*
+ */
+export interface HomepageDocumentDataBannersliderItem {
+  /**
+   * img field in *homepage → bannerslider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.bannerslider[].img
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  img: prismic.ImageField<never>;
+}
+
+/**
  * Content for homepage documents
  */
 interface HomepageDocumentData {
@@ -144,7 +159,20 @@ interface HomepageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
+
+  /**
+   * bannerslider field in *homepage*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.bannerslider[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  bannerslider: prismic.GroupField<
+    Simplify<HomepageDocumentDataBannersliderItem>
+  > /**
    * Meta Description field in *homepage*
    *
    * - **Field Type**: Text
@@ -210,6 +238,7 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlidertestItem,
       HomepageDocumentDataSlicesSlice,
+      HomepageDocumentDataBannersliderItem,
       AllDocumentTypes,
     };
   }

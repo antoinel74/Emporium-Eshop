@@ -3,13 +3,11 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { KeyTextField } from "@prismicio/client";
 
 interface IBanner {
-  subtitle?: KeyTextField;
-  title?: KeyTextField;
   content?: KeyTextField;
   img?: any;
 }
 
-export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => {
+export const Banner: React.FC<IBanner> = ({ content, img }) => {
   return (
     <div className="min-h-[80vh] w-full px-8 md:px-16">
       <figure className="relative h-full w-full aspect-[16/9] flex justify-center items-center">
@@ -21,9 +19,9 @@ export const Banner: React.FC<IBanner> = ({ subtitle, title, content, img }) => 
           <p className="text-[clamp(1.5rem,2vw,2.5rem)]">{content}</p>
           <PrismicNextLink
             href="/"
-            className="text-slate-400 group text-[clamp(1rem,2vw,1.5rem)] block pt-6 underline underline-offset-8 transition-all"
+            className="text-slate-400 group text-[clamp(1rem,2vw,1.5rem)] block pt-6 underline hover:tracking-wide underline-offset-8 transition-all"
           >
-            Discover Now -&gt;
+            Discover Now &gt;
           </PrismicNextLink>
         </div>
       </div>
