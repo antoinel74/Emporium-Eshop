@@ -21,7 +21,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <Banner img={page.data.bannerimg} content={page.data.bannercontent} />
+      <Banner img={page.data.bannerimg} content={page.data.bannercontent} imgs={page.data.bannerslider} />
     </main>
   );
 }

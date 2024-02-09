@@ -1,18 +1,35 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { KeyTextField } from "@prismicio/client";
 
 interface IBanner {
   content?: KeyTextField;
   img?: any;
+  imgs?: any;
 }
 
-export const Banner: React.FC<IBanner> = ({ content, img }) => {
+export const Banner: React.FC<IBanner> = ({ content, img, imgs }) => {
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  const nextImg = () => {
+    setCurrentImgIndex((prevIndex) => (prevIndex + 1) % imgs.length);
+  };
+
+  useEffect(() => {
+    const delay = 1000;
+    const timeoutId = setTimeout(nextImg, delay);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentImgIndex]);
+
   return (
     <div className="min-h-[80vh] w-full px-8 md:px-16">
       <figure className="relative h-full w-full aspect-[16/9] flex justify-center items-center">
         <PrismicNextImage field={img} fill className="absolute h-full w-full object-cover rounded-lg" />
-        <div className="absolute z-20 bg-white  w-2/3 h-2/3"></div>
+        <div className="absolute z-20 bg-white  w-2/3 h-2/3">
+          <PrismicNextImage field={imgs[currentImgIndex].img} fill className="object-cover" />
+        </div>
       </figure>
       <div className="flex flex-col items-end py-24 mr-8 md:mr-16">
         <div className="pb-4 w-[80%] md:w-[70%]">
