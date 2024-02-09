@@ -1,5 +1,4 @@
 import React from "react";
-import { DynamicClock } from "./Clock";
 import { KeyTextField } from "@prismicio/client";
 
 interface Iheader {

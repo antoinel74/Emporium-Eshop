@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import useCart from "@/stores/cart.store";
 import Image from "next/image";
+import { PopUp } from "@/components/Popup";
 
 export default function Product(props?: any) {
   const { searchParams } = props;
@@ -14,6 +15,8 @@ export default function Product(props?: any) {
   const { cost, productInfo, name, description, type } = product;
   const brand = name.split(" ")[0];
   const nameWithoutBrand = name.split(" ").slice(1).join(" ");
+
+  const [showPopup, setShowPopup] = useState(false);
 
   /*   console.log(product);
   console.log(searchParams); */
@@ -34,6 +37,10 @@ export default function Product(props?: any) {
     toggleModal();
   };
 
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <div className="mb-12">
       {name && (
@@ -47,7 +54,10 @@ export default function Product(props?: any) {
             <p className="my-4 opacity-50 lg:text-xl">{productInfo.description}</p>
             <span className="block text-2xl font-semibold">€{cost / 100}</span>
             <div className="my-8 lg:my-12">
-              <button className="flex w-full items-center justify-center gap-2 rounded border-2 border-black py-2">
+              <button
+                onClick={togglePopup}
+                className="flex w-full items-center justify-center gap-2 rounded border-2 border-black py-2"
+              >
                 <img src="/heart.svg" className="h-5 w-5" />
                 Add to Wishlist
               </button>
@@ -60,6 +70,7 @@ export default function Product(props?: any) {
             <p className="flex gap-2 opacity-50 uppercase font-semibold text-sm gap-2 items-center my-4">
               Category :<span className="block">{productInfo.type}</span>
             </p>
+            {showPopup && <PopUp onClose={togglePopup} />}
           </div>
         </div>
       )}

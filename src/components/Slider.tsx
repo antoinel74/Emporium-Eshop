@@ -13,13 +13,6 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
     setCurrentImgIndex((prevIndex) => (prevIndex + 1) % img.length);
   };
 
-  useEffect(() => {
-    const delay = 5000;
-    const timeoutId = setTimeout(nextImg, delay);
-
-    return () => clearTimeout(timeoutId);
-  }, [currentImgIndex]);
-
   return (
     <div className="slider-container w-full px-4 md:px-14">
       <figure className="relative aspect-[16/7] w-full">
