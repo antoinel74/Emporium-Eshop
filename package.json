@@ -14,7 +14,6 @@
     "@prismicio/next": "^1.5.0",
     "@prismicio/react": "^2.7.3",
     "next": "14.1.0",
-    "next-auth": "^4.24.6",
     "react": "^18",
     "react-dom": "^18",
     "stripe": "^14.14.0",
