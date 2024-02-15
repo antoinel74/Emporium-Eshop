@@ -87,7 +87,7 @@ export const Navbar = () => {
         )}
 
         <div className="flex items-center gap-6">
-          <img src="/search.svg" className="hidden md:block" />
+          <img src="/user.svg" className="hidden md:block" />
           <button onClick={handleOpenModal} className="flex items-center gap-1">
             <img src="/cart.svg" />
             {totalQuantity ?? (
