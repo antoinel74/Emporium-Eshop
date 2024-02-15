@@ -16,15 +16,19 @@ export const Slider: React.FC<ISlider> = ({ img }) => {
   return (
     <div className="slider-container w-full px-4 md:px-14">
       <figure className="relative aspect-[16/7] w-full">
-        <Image
-          src={img[currentImgIndex].img.url}
-          fill
-          alt={`${currentImgIndex + 1}`}
-          className="absolute object-cover rounded"
-        />
-        <div className="absolute bottom-4 left-4 md:left-8  z-20 text-white flex items-center gap-2 font-inconsolata">
+        {img && (
+          <Image
+            src={img[currentImgIndex].img.url}
+            fill
+            alt={`${currentImgIndex + 1}`}
+            className="absolute rounded object-cover"
+            priority={true}
+          />
+        )}
+
+        <div className="absolute bottom-4 left-4 z-20  flex items-center gap-2 font-inconsolata text-white md:left-8">
           <span className="flex items-center">0{currentImgIndex + 1}</span>
-          <span className="h-[1px] w-6 bg-white inline-block" />
+          <span className="inline-block h-[1px] w-6 bg-white" />
           <button onClick={nextImg} className="hover:opacity-50">
             {currentImgIndex === 0 ? "Next" : "Prev"}
           </button>

@@ -41,7 +41,10 @@ export const Navbar = () => {
   };
 
   const isHomepage = pathname === "/";
-  const totalQuantity = cartItems.reduce((acc: number, item: any) => acc + item.quantity, 0);
+  const totalQuantity = cartItems.reduce(
+    (acc: number, item: any) => acc + item.quantity,
+    0
+  );
 
   return (
     <>
@@ -49,15 +52,22 @@ export const Navbar = () => {
       {openMenu && <MobileMenu handleClose={handleOpenMenu} />}
       <nav
         className={`fixed top-0 z-30 flex w-full items-center justify-between p-4 transition-all duration-200 ease-in-out md:px-16 ${
-          isScrolled ? (isHomepage ? "bg-white invert-0" : "bg-white") : isHomepage ? "hidden" : ""
-        }`}
-      >
+          isScrolled
+            ? isHomepage
+              ? "bg-white invert-0"
+              : "bg-white"
+            : isHomepage
+              ? "hidden"
+              : ""
+        }`}>
         <Link href="/" className="text-lg font-semibold uppercase">
           Emporium
         </Link>
 
         {isMobile ? (
-          <button onClick={handleOpenMenu} className="group mr-auto ml-2 flex cursor-pointer flex-col space-y-[3px]">
+          <button
+            onClick={handleOpenMenu}
+            className="group ml-2 mr-auto flex cursor-pointer flex-col space-y-[3px]">
             <span className="block h-[2px] w-6 rounded bg-black transition-all group-hover:w-4"></span>
             <span className="block h-[2px] w-4 rounded bg-black transition-all group-hover:w-6"></span>
             <span className="block h-[2px] w-3 rounded bg-black transition-all group-hover:w-4"></span>
@@ -80,7 +90,9 @@ export const Navbar = () => {
           <img src="/search.svg" className="hidden md:block" />
           <button onClick={handleOpenModal} className="flex items-center gap-1">
             <img src="/cart.svg" />
-            {totalQuantity ?? <span className="ml-1 text-sm">{totalQuantity}</span>}
+            {totalQuantity ?? (
+              <span className="ml-1 text-sm">{totalQuantity}</span>
+            )}
           </button>
         </div>
       </nav>

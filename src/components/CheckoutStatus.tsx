@@ -2,44 +2,60 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 
-export const CheckoutStatus = () => {
+interface StepProps {
+  stepNumber: number;
+  title: string;
+  active: boolean;
+  completed: boolean;
+}
+
+const Step: React.FC<StepProps> = ({
+  stepNumber,
+  title,
+  active,
+  completed,
+}) => {
+  return (
+    <p
+      className={`flex items-center gap-2 border-b-4 pb-6 pr-12 font-semibold ${active || completed ? "border-[#00a27d] text-[#00a27d]" : "border-black"}`}>
+      <span
+        className={`flex h-7 w-7 items-center justify-center rounded-full ${active || completed ? "bg-[#00a27d]" : "bg-black"} text-white`}>
+        {stepNumber}
+      </span>
+      {title}
+    </p>
+  );
+};
+
+export const CheckoutStatus: React.FC = () => {
   const pathname = usePathname();
-  const processing = pathname === "/checkout-form";
-  const success = pathname === "/success";
-  const cancel = pathname === "/cancel";
+  const isProcessing = pathname === "/checkout-form";
+  const isSuccess = pathname === "/success";
+  const isCancel = pathname === "/cancel";
 
   return (
-    <div className={`hidden md:flex gap-8 text-sm py-2 mt-12 justify-center ${cancel ? "opacity-50" : ""}`}>
-      <p
-        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 ${processing || success ? "text-green-500 border-green-500" : "border-black"}`}
-      >
-        <span
-          className={`flex justify-center items-center rounded-full h-10 w-10 ${processing || success ? "bg-green-500" : "bg-black"} text-white`}
-        >
-          1
-        </span>
-        Shopping cart
-      </p>
-      <p
-        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 ${success ? "border-green-500 text-green-500" : "border-black"}`}
-      >
-        <span
-          className={`flex justify-center items-center rounded-full h-10 w-10 text-white ${success ? "bg-green-500" : "bg-black"}`}
-        >
-          2
-        </span>
-        Checkout details
-      </p>
-      <p
-        className={`flex items-center gap-2 font-semibold pb-6 pr-12 border-b-4 border-black ${processing ? "opacity-25" : ""} ${success ? "opacity-100 border-green-500 text-green-500" : ""}`}
-      >
-        <span
-          className={`flex justify-center items-center rounded-full h-10 w-10 text-white ${success ? "bg-green-500" : "bg-black"}`}
-        >
-          3
-        </span>
-        Order complete
-      </p>
+    <div
+      className={`mt-12 hidden justify-center gap-8 py-2 text-sm md:flex ${isCancel ? "opacity-50" : ""}`}>
+      <Step
+        stepNumber={1}
+        title="Shopping cart"
+        active={isProcessing || isSuccess}
+        completed={isSuccess}
+      />
+      <Step
+        stepNumber={2}
+        title="Checkout details"
+        active={isSuccess}
+        completed={isSuccess}
+      />
+      <Step
+        stepNumber={3}
+        title="Order complete"
+        active={isSuccess}
+        completed={isSuccess}
+      />
     </div>
   );
 };
+
+export default CheckoutStatus;

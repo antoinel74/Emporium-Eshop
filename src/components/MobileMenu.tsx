@@ -9,8 +9,10 @@ type Props = {
 
 export const MobileMenu: React.FC<Props> = ({ handleClose }) => {
   return (
-    <div className="min-h-screen fixed top-0 left-0 z-[400] w-screen bg-white">
-      <button onClick={handleClose} className="block ml-auto p-4 text-3xl hover:scale-75 transition-all">
+    <div className="fixed left-0 top-0 z-[400] min-h-screen w-screen bg-white">
+      <button
+        onClick={handleClose}
+        className="ml-auto block p-4 text-3xl transition-all hover:scale-75">
         X
       </button>
       <ul className="mt-12">
@@ -24,18 +26,27 @@ export const MobileMenu: React.FC<Props> = ({ handleClose }) => {
             onClick={handleClose}
             key={title}
             href={url}
-            className="block w-full p-4 bg-white hover:invert text-3xl"
-          >
+            className="block w-full bg-white p-4 text-3xl hover:invert">
             {title}
           </PrismicNextLink>
         ))}
       </ul>
-      <div className="flex gap-3 absolute bottom-4 right-4">
+      <div className="absolute bottom-4 right-4 flex gap-3">
         <PrismicNextLink href="https://facebook.com">
-          <Image src="/square-facebook.svg" alt="Facebook" height={30} width={30} />
+          <Image
+            src="/square-facebook.svg"
+            alt="Facebook"
+            height={30}
+            width={30}
+          />
         </PrismicNextLink>
         <PrismicNextLink href="https://facebook.com">
-          <Image src="/square-instagram.svg" alt="Instagram" height={30} width={30} />
+          <Image
+            src="/square-instagram.svg"
+            alt="Instagram"
+            height={30}
+            width={30}
+          />
         </PrismicNextLink>
         <PrismicNextLink href="https://facebook.com">
           <Image src="/youtube.svg" alt="Youtube" height={40} width={40} />

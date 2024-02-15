@@ -2,7 +2,7 @@ export * from "./Banner";
 export * from "./Cart/CartDisclaimer";
 export * from "./Cart/CartItem";
 export { default as CartModal } from "./Cart/CartModal";
-export * from "./CheckoutStatus";
+export { default as CheckoutStatus } from "./CheckoutStatus";
 export * from "./Clock";
 export * from "./Footer";
 export * from "./Forms/ContactInfo";
